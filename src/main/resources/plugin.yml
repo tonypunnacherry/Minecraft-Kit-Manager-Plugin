@@ -1,0 +1,8 @@
+name: SamplePlugin
+version: '${version}'
+main: org.sampleplugin.sampleplugin.SamplePlugin
+api-version: '1.20'
+commands:
+  kit:
+    description: Manages kits
+    usage: /kit
