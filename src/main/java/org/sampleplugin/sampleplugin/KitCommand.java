@@ -53,7 +53,7 @@ public class KitCommand implements CommandExecutor {
             if (args.length == 1) {
                 Kit lastKit = profile.getLastKit();
                 if (lastKit == null) {
-                    player.sendMessage("Please create a kit first😏");
+                    player.sendMessage("Please create a kit first");
                     return false;
                 }
                 lastKit.load(player);
@@ -61,7 +61,7 @@ public class KitCommand implements CommandExecutor {
                 String kitName = args[1];
                 Kit kit = profile.getKit(kitName);
                 if (kit == null) {
-                    player.sendMessage("Kit does not exist 🤢");
+                    player.sendMessage("Kit does not exist");
                     return false;
                 }
                 kit.load(player);
@@ -74,11 +74,11 @@ public class KitCommand implements CommandExecutor {
             String kitName = args[1];
             Kit kit = profile.getKit(kitName);
             if (kit == null) {
-                player.sendMessage("Kit does not exist 🤢");
+                player.sendMessage("Kit does not exist");
                 return false;
             }
             kit.update(player.getInventory().getContents());
-            player.sendMessage("Kit " + kitName + " has been updated. 😊");
+            player.sendMessage("Kit " + kitName + " has been updated.");
         } else if (subcommand.equals("delete")) {
             if (args.length < 2) {
                 player.sendMessage("Please provide the kit's name.");
@@ -86,7 +86,7 @@ public class KitCommand implements CommandExecutor {
             }
             String kitName = args[1];
             if (!profile.kitExists(kitName)) {
-                player.sendMessage("Kit does not exist 🤢");
+                player.sendMessage("Kit does not exist");
                 return false;
             }
             profile.removeKit(kitName);
@@ -95,7 +95,7 @@ public class KitCommand implements CommandExecutor {
             String kitName = args[1];
             String replaceName = args[2];
             if (!profile.kitExists(kitName)) {
-                player.sendMessage("Kit does not exist 😊");
+                player.sendMessage("Kit does not exist");
                 return false;
             }
             if (profile.kitExists(replaceName)) {
@@ -108,7 +108,7 @@ public class KitCommand implements CommandExecutor {
         } else if (subcommand.equals("list")) {
             Set<String> names = profile.getKitNames();
             if (names.isEmpty()) {
-                player.sendMessage("No kits 😡😡");
+                player.sendMessage("No kits");
             } else {
                 player.sendMessage("Kits: " + String.join(", ", names));
             }
